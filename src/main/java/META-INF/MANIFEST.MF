@@ -1,0 +1,50 @@
+Manifest-Version: 1.0
+Class-Path: spring-aop-5.2.7.RELEASE.jar lucene-spatial3d-8.4.0.jar tr
+ ansport-netty4-client-7.6.2.jar spring-data-elasticsearch-4.0.1.RELEA
+ SE.jar jackson-core-2.11.0.jar joda-time-2.10.4.jar logback-core-1.2.
+ 3.jar httpasyncclient-4.1.4.jar spring-boot-starter-web-2.3.1.RELEASE
+ .jar t-digest-3.2.jar lucene-highlighter-8.4.0.jar elasticsearch-cli-
+ 7.6.2.jar jakarta.annotation-api-1.3.5.jar jackson-datatype-jsr310-2.
+ 11.0.jar netty-transport-4.1.50.Final.jar HdrHistogram-2.1.9.jar luce
+ ne-queryparser-8.4.0.jar mapper-extras-client-7.6.2.jar elasticsearch
+ -7.6.2.jar jackson-dataformat-cbor-2.11.0.jar spring-webmvc-5.2.7.REL
+ EASE.jar spring-boot-starter-jdbc-2.3.1.RELEASE.jar spring-boot-start
+ er-logging-2.3.1.RELEASE.jar elasticsearch-secure-sm-7.6.2.jar log4j-
+ to-slf4j-2.13.3.jar jackson-module-parameter-names-2.11.0.jar spring-
+ tx-5.2.7.RELEASE.jar elasticsearch-rest-client-7.6.2.jar elasticsearc
+ h-core-7.6.2.jar spring-context-5.2.7.RELEASE.jar reactive-streams-1.
+ 0.3.jar spring-data-keyvalue-2.3.1.RELEASE.jar spring-boot-starter-js
+ on-2.3.1.RELEASE.jar commons-codec-1.14.jar lucene-grouping-8.4.0.jar
+  jackson-annotations-2.11.0.jar elasticsearch-x-content-7.6.2.jar sna
+ keyaml-1.26.jar parent-join-client-7.6.2.jar spring-boot-starter-2.3.
+ 1.RELEASE.jar jul-to-slf4j-1.7.30.jar jakarta.el-3.0.3.jar netty-code
+ c-4.1.50.Final.jar spring-web-5.2.7.RELEASE.jar spring-beans-5.2.7.RE
+ LEASE.jar slf4j-api-1.7.30.jar compiler-0.9.6.jar hppc-0.8.1.jar luce
+ ne-memory-8.4.0.jar netty-codec-http-4.1.50.Final.jar spring-boot-sta
+ rter-data-elasticsearch-2.3.1.RELEASE.jar druid-1.1.10.jar lang-musta
+ che-client-7.6.2.jar netty-common-4.1.50.Final.jar aggs-matrix-stats-
+ client-7.6.2.jar spring-context-support-5.2.7.RELEASE.jar spring-jcl-
+ 5.2.7.RELEASE.jar lucene-sandbox-8.4.0.jar mysql-connector-java-8.0.2
+ 0.jar spring-data-commons-2.3.1.RELEASE.jar spring-jdbc-5.2.7.RELEASE
+ .jar jopt-simple-5.0.2.jar lucene-spatial-8.4.0.jar HikariCP-3.4.5.ja
+ r mybatis-spring-boot-autoconfigure-2.1.3.jar lucene-misc-8.4.0.jar h
+ ttpclient-4.5.12.jar spring-data-redis-2.3.1.RELEASE.jar logback-clas
+ sic-1.2.3.jar lucene-queries-8.4.0.jar spring-boot-devtools-2.3.1.REL
+ EASE.jar spring-oxm-5.2.7.RELEASE.jar tomcat-embed-websocket-9.0.36.j
+ ar spring-boot-autoconfigure-2.3.1.RELEASE.jar spring-boot-2.3.1.RELE
+ ASE.jar lucene-analyzers-common-8.4.0.jar elasticsearch-geo-7.6.2.jar
+  lucene-join-8.4.0.jar druid-spring-boot-starter-1.1.10.jar lucene-sp
+ atial-extras-8.4.0.jar lucene-suggest-8.4.0.jar lucene-backward-codec
+ s-8.4.0.jar spring-expression-5.2.7.RELEASE.jar jna-4.5.1.jar jackson
+ -dataformat-smile-2.11.0.jar tomcat-embed-core-9.0.36.jar elasticsear
+ ch-rest-high-level-client-7.6.2.jar jackson-datatype-jdk8-2.11.0.jar 
+ mybatis-spring-boot-starter-2.1.3.jar lettuce-core-5.3.1.RELEASE.jar 
+ spring-boot-starter-tomcat-2.3.1.RELEASE.jar log4j-api-2.13.3.jar rea
+ ctor-core-3.3.6.RELEASE.jar httpcore-4.4.13.jar rank-eval-client-7.6.
+ 2.jar spring-boot-starter-data-redis-2.3.1.RELEASE.jar spring-core-5.
+ 2.7.RELEASE.jar netty-handler-4.1.50.Final.jar netty-buffer-4.1.50.Fi
+ nal.jar httpcore-nio-4.4.13.jar lucene-core-8.4.0.jar netty-resolver-
+ 4.1.50.Final.jar mybatis-spring-2.0.5.jar jackson-databind-2.11.0.jar
+  jackson-dataformat-yaml-2.11.0.jar mybatis-3.5.5.jar
+Main-Class: throner.myspringboot.MyspringbootApplication
+

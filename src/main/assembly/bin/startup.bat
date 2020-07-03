@@ -1,0 +1,1 @@
+java -Dloader.path=../lib,../config -jar ../myspringboot-0.0.1-SNAPSHOT.jar
