@@ -72,7 +72,21 @@ public class OrgControllerTest {
     */
     @Test
     public void testQueryUserByPage() throws Exception {
-    //TODO: Test goes here...
+        //TODO: Test goes here...
     }
+
+    @Test
+    public void testSetRedis() throws Exception {
+        MvcResult mvcResult = mockMvc
+                .perform(
+                        MockMvcRequestBuilders.get("/org/setRedis/test_cc/8888")
+                )
+                .andReturn();
+        int status = mvcResult.getResponse().getStatus();
+        String responseString = mvcResult.getResponse().getContentAsString();
+        Assert.assertEquals("请求错误", 200, status);
+        Assert.assertEquals("返回结果不一致", "0", responseString);
+    }
+
 
 } 

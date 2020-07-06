@@ -39,4 +39,11 @@ public class OrgController {
         return sResult;
     }
 
+    @RequestMapping("/setRedis/{key}/{value}")
+    public String setRedis(@PathVariable String key,@PathVariable String value){
+        String sResult = "";
+        orgManager.setRedisValue(key,value);
+        return "0";
+    }
+
 }

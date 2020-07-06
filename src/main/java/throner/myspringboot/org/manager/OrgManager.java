@@ -12,6 +12,7 @@ import throner.myspringboot.org.service.IDeptService;
 import throner.myspringboot.org.service.IEccCodeDictService;
 import throner.myspringboot.org.service.IStaffService;
 import throner.myspringboot.org.service.IUserService;
+import throner.myspringboot.tool.RedisUtils;
 
 import javax.annotation.Resource;
 /**
@@ -28,6 +29,7 @@ public class OrgManager {
     private IUserService userService;
     @Resource
     private IEccCodeDictService eccCodeDictService;
+
 
     // 启用事务
     @Transactional
@@ -69,5 +71,9 @@ public class OrgManager {
         staff1.setStaffName("2");
         staffService.save(staff1);
         return sResult;
+    }
+
+    public void setRedisValue(String key,String value){
+        boolean bResult = RedisUtils.set(key,value);
     }
 }
