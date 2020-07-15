@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by chenjiansheng on 2020-6-30.
  */
-public class DateUtil {
+public class DateUtils {
 
     public static String format(Date date,String format){
         SimpleDateFormat df = new SimpleDateFormat(format);

@@ -46,4 +46,14 @@ public class OrgController {
         return "0";
     }
 
+    @RequestMapping("/getByEs/{searchContent}")
+    public String  setRedis(@PathVariable String searchContent){
+        return orgManager.getValueByEs(searchContent);
+    }
+
+    @RequestMapping("/getByEs1/{searchContent}")
+    public String  setRedis1(@PathVariable String searchContent){
+        return orgManager.getValueByEs1(searchContent);
+    }
+
 }

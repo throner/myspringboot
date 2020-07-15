@@ -1,4 +1,10 @@
 spring:
+  elasticsearch:
+    rest:
+      uris:
+        - http://127.0.0.1:9200
+#      username: elastic
+#      password: 123456
   datasource:
     dynamic:
       primary: master #设置默认的数据源或者数据源组,默认值即为master
