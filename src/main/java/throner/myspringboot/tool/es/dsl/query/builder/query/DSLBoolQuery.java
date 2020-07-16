@@ -37,15 +37,19 @@ public class DSLBoolQuery implements DSLQuery {
     private static final  String MUST = "must";
     private static final  String SHOULD = "should";
     private static final  String MUST_NOT = "must_not";
+    private static final  String FILTER = "filter";
+
 
     private List<DSLQuery> mustQueries;
     private List<DSLQuery> shouldQueries;
     private List<DSLQuery> must_notQueries;
+    private List<DSLQuery> filterQueries;
 
     public DSLBoolQuery() {
         this.mustQueries = new ArrayList<DSLQuery>();
         this.shouldQueries = new ArrayList<DSLQuery>();
         this.must_notQueries = new ArrayList<DSLQuery>();
+        this.filterQueries = new ArrayList<DSLQuery>();
     }
 
     /**
@@ -77,6 +81,11 @@ public class DSLBoolQuery implements DSLQuery {
         return this;
     }
 
+    public DSLBoolQuery filter(DSLQuery query) {
+        filterQueries.add(query);
+        return this;
+    }
+
     protected JsonArray getQueriesJsonArray(List<DSLQuery> queries) {
         if(queries.size() == 0) {
             return null;
@@ -102,6 +111,12 @@ public class DSLBoolQuery implements DSLQuery {
             JsonArray must_notArray = getQueriesJsonArray(must_notQueries);
             boolBody.add(MUST_NOT, must_notArray);
         }
+
+        if(filterQueries.size() > 0) {
+            JsonArray filterArray = getQueriesJsonArray(filterQueries);
+            boolBody.add(FILTER, filterArray);
+        }
+
         JsonObject boolQuery = new JsonObject();
         boolQuery.add(BOOL, boolBody);
         return boolQuery;

@@ -3,10 +3,13 @@ package throner.myspringboot.org.manager;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.google.gson.JsonObject;
 import io.searchbox.client.JestClient;
 import io.searchbox.client.JestResult;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Index;
+import io.searchbox.core.Search;
+import io.searchbox.core.SearchResult;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.TimeValue;
 import org.elasticsearch.action.search.SearchRequest;
@@ -27,6 +30,13 @@ import throner.myspringboot.org.service.IEccCodeDictService;
 import throner.myspringboot.org.service.IStaffService;
 import throner.myspringboot.org.service.IUserService;
 import throner.myspringboot.tool.RedisUtils;
+import throner.myspringboot.tool.es.dsl.query.builder.DSLBuilder;
+import throner.myspringboot.tool.es.dsl.query.builder.filter.DSLTermFilter;
+import throner.myspringboot.tool.es.dsl.query.builder.query.DSLBoolQuery;
+import throner.myspringboot.tool.es.dsl.query.builder.query.DSLMatchAllQuery;
+import throner.myspringboot.tool.es.dsl.query.builder.query.DSLMatchQuery;
+import throner.myspringboot.tool.es.dsl.query.builder.query.DSLTermQuery;
+
 import javax.annotation.Resource;
 
 
@@ -100,7 +110,27 @@ public class OrgManager {
     }
 
     public String getValueByEs(String searchContent) {
+        String searchQueryString = new DSLBuilder()
+                .setQuery(new DSLBoolQuery()
+                        .must(new DSLMatchQuery("name", "阿童木"))
+                        .filter(new DSLMatchQuery("name","阿童木"))
+                )
+                .build()
+                .toString();
 
+        log.info("query json:"+searchQueryString);
+        Search search = new Search.Builder(searchQueryString)
+                .addIndex("test1")
+                .addType("book")
+                .build();
+        try {
+            //执行
+            SearchResult searchResult = jestClient.execute(search);
+            JsonObject jsonObject = searchResult.getJsonObject();
+            log.info("result json:"+jsonObject.toString());
+        } catch (Exception e) {
+            log.error("新增索引出错",e);
+        }
         return "1";
     }
 
